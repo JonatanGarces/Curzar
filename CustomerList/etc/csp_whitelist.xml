@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<csp_whitelist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Csp:etc/csp_whitelist.xsd">
+    <policies>
+        <policy id="script-src">
+            <values>
+                <value id="devdocs-base" type="host"></value>
+                <value id="magento" type="host">https://magento.com</value>
+                <value id="cloudflare" type="host">https://cdnjs.cloudflare.com</value>
+                <value id="zencdn" type="host">https://vjs.zencdn.net</value>
+            </values>
+        </policy>
+        <policy id="style-src">
+            <values>
+                <value id="zencdn-css" type="host">https://vjs.zencdn.net</value>
+            </values>
+        </policy>
+         <policy id="media-src">
+            <values>
+                <value id="curzar" type="host">https://curzar.com:7000</value>
+            </values>
+        </policy>
+    </policies>
+</csp_whitelist>

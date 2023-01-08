@@ -1,0 +1,39 @@
+<?php $collection = $block->getCustomData() ?>
+
+
+<?php if ($collection && count($collection)) : ?>
+
+<div class="table-wrapper">
+<table class="data table history" >
+<thead>
+<tr>
+<th scope="col" class="col id"><?= $block->escapeHtml(__('Nombre del Curso')) ?></th>
+<th scope="col" class="col date"><?= $block->escapeHtml(__('Fecha de Orden')) ?></th>
+<th scope="col" class="col total"><?= $block->escapeHtml(__('Accion')) ?></th>
+</tr>
+</thead>
+<tbody>
+
+<?php  foreach ($collection as $item) : ?>
+
+<tr>
+<td data-th="<?= $block->escapeHtml(__('Order #')) ?>" class="col id"><?= $block->escapeHtml($item->getName()) ?></td>
+<td data-th="<?= $block->escapeHtml(__('Date')) ?>" class="col date"><?=$block->formatDate($item->getCreatedAt()) ?></td>
+<td data-th="<?= $block->escapeHtml(__('Actions')) ?>" class="col actions">
+<a href="<?= $block->escapeUrl($block->getViewUrl($item->getCourseId())) ?>" class="action view">
+<span><?= $block->escapeHtml(__('View Course')) ?></span>
+</a>
+</td>
+
+</tr>
+<?php endforeach; ?>
+</tbody>
+</table>
+</div>
+<?php if ($block->getPagerHtml()) : ?>
+<div class="order-products-toolbar toolbar bottom"><?= $block->getPagerHtml() ?></div>
+<?php endif ?>
+
+<?php else : ?>
+    <div class="message info empty"><span><?= $block->escapeHtml($block->getEmptyOrdersMessage()) ?></span></div>
+<?php endif ?>

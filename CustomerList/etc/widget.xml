@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:helloworld:Magento_Widget:etc/widget.xsd">
+    <widget class="Curzar\CustomerList\Block\Widget\Curso" id="curzar_widget_course">
+        <label>Curzar course</label>
+        <description>Curzar frontend courses</description>
+        <parameters>
+            <parameter name="course_id" sort_order="10" visible="true" xsi:type="text">
+                <label>id_course</label>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

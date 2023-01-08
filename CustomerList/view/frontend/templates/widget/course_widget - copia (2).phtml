@@ -1,0 +1,96 @@
+<?php $block->setCourseId($block->getData('course_id')) ?>
+
+
+
+<div style="position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;">
+
+<iframe id="<?= $block->escapeHtml($block->getData('course_id')) ?>"  style=" position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;" src="https://www.youtube.com/embed/XyHX37Orvr0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
+
+
+
+
+
+
+<?php $collectionSections = $block->getSections() ?>
+
+<!-- foreach sections -->
+<?php foreach ($collectionSections as $item) : ?>
+
+ <!--div container sections-->   
+<div class="my-3 p-3 bg-body rounded shadow-sm">
+
+<!-- h3 section name-->
+<h3 class="border-bottom pb-2 mb-0"><?= $block->escapeHtml($item->getName()) ?></h3>
+
+<?php $collectionBlocks = $block->getBlocks($item->getId()) ?>
+
+
+<!-- if blocks-->
+<?php if (count($collectionBlocks)) : ?>
+
+<!-- foreach blocks-->
+<?php foreach ($collectionBlocks as $item2) : ?>
+
+
+<!-- div container blocks-->
+<div class="my-3 p-3 bg-body rounded shadow-sm">
+
+ <!-- div play button and name-->   
+<div class="d-flex text-muted pt-3">
+
+
+<!--<div class="bd-placeholder-img flex-shrink-0 me-2 rounded" >-->
+    <button class="button-rounded me-2" data-videourl="<?= $block->escapeHtml($item2->getUrl()) ?>"  data-course_id="<?= $block->escapeHtml($block->getData('course_id')) ?>"><i class="far fa-play-circle fa-2x"></i></button>
+<!--</div>-->
+
+<strong style="padding-top: 7px;" class="d-block text-gray-dark"> <?= $block->escapeHtml($item2->getName()) ?></strong>
+
+
+
+
+<?php $collectionFiles = $block->getFiles($item2->getId()) ?>
+<?php if (count($collectionFiles)) : ?>
+<!--<strong style="padding-top: 7px;margin-left:auto;" class="d-block text-gray-dark">Archivos</strong>
+   <div class="bd-placeholder-img flex-shrink-0 me-2 rounded" style="margin-left: 5px"><button class="downloadfiles" data-files="<?= $block->escapeHtml($item2->getId()) ?>" data-course_id="<?= $block->escapeHtml($block->getData('course_id')) ?>"><i class="fas fa-file-download fa-2x"></i></button></div>-->
+<!-- div play button and name-->   
+</div>
+<div id="<?= $block->escapeHtml($block->getData('course_id')) ?>_<?= $block->escapeHtml($item2->getId()) ?>" class="hidefiles" >
+<?php foreach ($collectionFiles as $item3) : ?>
+  <div class="d-flex text-muted pt-3"><a href="<?= $block->escapeHtml($item3->getUrl()) ?>" target="_blank"><?= $block->escapeHtml($item3->getName()) ?></a></div>
+<?php endforeach; ?>
+</div>
+<?php else : ?>
+</div>
+<?php endif ?>
+
+
+
+
+
+
+
+
+</div>
+
+<?php endforeach; ?>
+
+
+<?php else : ?>
+<?php endif ?>
+
+</div>
+
+<!-- foreach sections -->
+<?php endforeach; ?> 
+
+

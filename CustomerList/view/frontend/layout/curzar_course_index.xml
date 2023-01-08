@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<update handle="customer_account"/>
+	 <head>
+        <css src="Curzar_CustomerList::css/boot.css" />
+        <css src="Curzar_CustomerList::css/video-js.min.css" />
+        <css src="Curzar_CustomerList::css/all.min.css" />
+     </head>
+
+        <referenceContainer name="content">
+            	<block template="Curzar_CustomerList::index.phtml" class="Curzar\CustomerList\Block\Index" name="curzar_customerlist_block_index" cacheable="false"/>
+        </referenceContainer>
+</page>

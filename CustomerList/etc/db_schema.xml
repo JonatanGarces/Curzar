@@ -1,0 +1,45 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="recipe" resource="default" engine="innodb" comment="Table for recipes">
+        <column type="int" name="idrecipe" unsigned="true" nullable="false" identity="true"/>
+        <column type="varchar" name="name" length="45" nullable="true"/>>
+        <column name="created_at" nullable="false" xsi:type="datetime" default="CURRENT_TIMESTAMP" on_update="false"/>
+        <column name="updated_at" nullable="true" xsi:type="datetime" default="CURRENT_TIMESTAMP" on_update="true"/>
+                <constraint xsi:type="primary" referenceId="PRIMARY">
+                <column name="idrecipe"/>
+            </constraint>
+    </table>
+    <table name="recipe_ingredient" resource="default" engine="innodb" comment="Recipe Ingredients table relationship">
+        <column type="int" name="idrecipe_ingredient" unsigned="false" nullable="false" identity="true"/>
+        <column type="int" name="idrecipe" unsigned="false" nullable="false"/>
+        <column type="int" name="idingredient" unsigned="false" nullable="false"/>
+        <column type="int" name="position" unsigned="false" nullable="false"/>
+        <column name="created_at" nullable="false" xsi:type="datetime" default="CURRENT_TIMESTAMP" on_update="false"/>
+        <column name="updated_at" nullable="true" xsi:type="datetime" default="CURRENT_TIMESTAMP" on_update="true"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="idrecipe_ingredient"/>
+        </constraint>
+    </table>
+    <table name="ingredient" resource="default" engine="innodb" comment="Ingredients table">
+        <column type="int" name="idingredient" unsigned="false" nullable="false" identity="true"/>
+        <column type="varchar" name="name" length="45" nullable="true"/>>
+        <column name="created_at" nullable="false" xsi:type="datetime" default="CURRENT_TIMESTAMP" on_update="false"/>
+        <column name="updated_at" nullable="true" xsi:type="datetime" default="CURRENT_TIMESTAMP" on_update="true"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="idingredient"/>
+        </constraint>
+    </table>
+    <table name="instruction" resource="default" engine="innodb" comment="Instructions table">
+        <column type="int" name="idinstruction" unsigned="false" nullable="false" identity="true"/>
+        <column type="int" name="idrecipe" unsigned="false" nullable="false"/>
+        <column type="int" name="iduser" unsigned="false" nullable="false"/>
+        <column type="int" name="measuretype" unsigned="false" nullable="false"/>
+        <column type="float" name="qty" />
+        <column type="varchar" name="description" length="100" nullable="true"/>
+        <column name="created_at" nullable="false" xsi:type="datetime" default="CURRENT_TIMESTAMP" on_update="false"/>
+        <column name="updated_at" nullable="true" xsi:type="datetime" default="CURRENT_TIMESTAMP" on_update="true"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="idinstruction"/>
+        </constraint>
+    </table>
+</schema>

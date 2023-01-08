@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Catalog:etc/product_types.xsd">
+    <type name="course_product" label="Course Product" modelInstance="Curzar\CustomerList\Model\Product\Type\CourseProductType" indexPriority="60" sortOrder="80" isQty="true">
+    	       <priceModel instance="Curzar\CustomerList\Model\Product\Price" />
+
+    </type>
+</config>

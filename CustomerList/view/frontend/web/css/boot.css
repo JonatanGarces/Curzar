@@ -1,0 +1,97 @@
+
+.rounded {
+    border-radius: 0.25rem!important;
+}
+.bg-body {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-body-bg-rgb),var(--bs-bg-opacity))!important;
+}
+.p-3 {
+    padding: 1rem!important;
+}
+.my-3 {
+    margin-top: 1rem!important;
+    margin-bottom: 1rem!important;
+}
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+
+.pb-2 {
+    padding-bottom: 0.5rem!important;
+}
+.mb-0 {
+    margin-bottom: 0!important;
+}
+.border-bottom {
+    border-bottom: 1px solid #dee2e6!important;
+}
+
+.text-muted {
+    --bs-text-opacity: 1;
+    color: #6c757d!important;
+}
+.pt-3 {
+    padding-top: 1rem!important;
+}
+.d-flex {
+    display: flex!important;
+}
+
+.lh-sm {
+    line-height: 1.25!important;
+}
+.pb-3 {
+    padding-bottom: 1rem!important;
+}
+.mb-0 {
+    margin-bottom: 0!important;
+}
+.border-bottom {
+    border-bottom: 1px solid #dee2e6!important;
+}
+.small, small {
+    font-size: .875em;
+}
+.d-block {
+    display: block!important;
+}
+b, strong {
+    font-weight: bolder;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+.rounded {
+    border-radius: 0.25rem!important;
+}
+.me-2 {
+    margin-right: 0.5rem!important;
+}
+.flex-shrink-0 {
+    flex-shrink: 0!important;
+}
+img, svg {
+    vertical-align: middle;
+}
+
+
+
+
+.button-rounded{
+    padding-bottom: 2px; 
+padding-top: 2px;
+padding-left: 2px;
+padding-right:2px; border-radius: 100%;
+}
+
+
+.downloadfiles{
+    padding-bottom: 2px; 
+padding-top: 2px;
+padding-left: 2px;
+padding-right:2px;
+}
+
