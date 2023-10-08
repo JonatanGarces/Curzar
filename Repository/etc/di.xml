@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Curzar\Repository\Api\Data\PhonecaseInterface" type="Curzar\Repository\Model\Phonecase" />
+    <preference for="Curzar\Repository\Api\Data\PhonecaseSearchResultInterface" type="Curzar\Repository\Model\PhonecaseSearchResult" />
+    <preference for="Curzar\Repository\Api\PhonecaseRepositoryInterface" type="Curzar\Repository\Model\PhonecaseRepository" />
+</config>
