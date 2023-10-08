@@ -1,0 +1,9 @@
+interface CustomizableProductInterface {
+    phonecase: [PhonecaseList] @resolver(class: "\\Curzar\\Graphql\\Model\\Resolver\\PhonecaseList")
+}
+
+type PhonecaseList @doc(description: "Gets the cellphone case list") {
+    model: String @doc(description: "Cellphone model")
+    brand: String @doc(description: "Cellphone Brand")
+    id: Int! @doc(description: "Cellphone id")
+}

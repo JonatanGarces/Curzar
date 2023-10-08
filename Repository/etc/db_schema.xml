@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="phonecase" resource="default" engine="innodb" comment="Table for phonecases">
+        <column xsi:type="int" name="id" unsigned="true" nullable="false" identity="true" />
+        <column xsi:type="varchar" name="brand" length="45" nullable="true" />
+        <column xsi:type="varchar" name="model" length="100" nullable="true" />
+        <column name="created_at" nullable="false" xsi:type="datetime" default="CURRENT_TIMESTAMP"
+            on_update="false" />
+        <column name="updated_at" nullable="true" xsi:type="datetime" default="CURRENT_TIMESTAMP"
+            on_update="true" />
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id" />
+        </constraint>
+    </table>
+</schema>
