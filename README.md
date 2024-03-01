@@ -1,0 +1,1 @@
+A Magento module for selling courses in a Magento store. It creates a new product type with the possibility to create sections, resources, and videos similar to Moodle.org. These features are available in the customer dashboard once the product is purchased.
